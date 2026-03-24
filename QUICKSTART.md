@@ -52,6 +52,7 @@ npm run lint:fix        # Автоисправление
 ### 1. Добавить новую страницу
 
 **Шаг 1:** Создать компонент страницы
+
 ```tsx
 // /src/app/pages/MyPage.tsx
 export function MyPage() {
@@ -64,6 +65,7 @@ export function MyPage() {
 ```
 
 **Шаг 2:** Добавить роут
+
 ```tsx
 // /src/app/routes.tsx
 import { MyPage } from "./pages/MyPage";
@@ -71,16 +73,17 @@ import { MyPage } from "./pages/MyPage";
 children: [
   // ...
   { path: "my-page", Component: MyPage },
-]
+];
 ```
 
 **Шаг 3:** Добавить в навигацию (опционально)
+
 ```tsx
 // /src/app/constants/siteConfig.ts
 navigation: [
   // ...
-  { path: '/my-page', label: 'Моя Страница' },
-]
+  { path: "/my-page", label: "Моя Страница" },
+];
 ```
 
 ### 2. Создать новый компонент
@@ -103,49 +106,38 @@ export function MyComponent({ title, children }: MyComponentProps) {
 ```
 
 **Экспортировать из index:**
+
 ```tsx
 // /src/app/components/index.ts
-export { MyComponent } from './MyComponent';
+export { MyComponent } from "./MyComponent";
 ```
 
 ### 3. Использовать национальные цвета
 
 ```tsx
 // Красный (основной акцент)
-className="bg-[#E31837] text-white"
-className="border-[#E31837]"
-className="text-[#E31837]"
+className = "bg-[#E31837] text-white";
+className = "border-[#E31837]";
+className = "text-[#E31837]";
 
 // Желтый (вторичный акцент)
-className="bg-[#FFCD00] text-neutral-900"
-className="border-[#FFCD00]"
-className="text-[#FFCD00]"
+className = "bg-[#FFCD00] text-neutral-900";
+className = "border-[#FFCD00]";
+className = "text-[#FFCD00]";
 ```
 
-### 4. Добавить изображение
+### 4. Создать форму
 
 ```tsx
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-
-<ImageWithFallback
-  src="https://images.unsplash.com/photo-..."
-  alt="Описание"
-  className="w-full h-64 object-cover"
-/>
-```
-
-### 5. Создать форму
-
-```tsx
-import { useForm } from '../hooks/useForm';
+import { useForm } from "../hooks/useForm";
 
 function ContactForm() {
   const { values, handleChange, handleSubmit, isSubmitting } = useForm(
-    { name: '', email: '' },
+    { name: "", email: "" },
     async (data) => {
-      console.log('Отправка:', data);
+      console.log("Отправка:", data);
       // API call здесь
-    }
+    },
   );
 
   return (
@@ -157,14 +149,14 @@ function ContactForm() {
         placeholder="Имя"
       />
       <button disabled={isSubmitting}>
-        {isSubmitting ? 'Отправка...' : 'Отправить'}
+        {isSubmitting ? "Отправка..." : "Отправить"}
       </button>
     </form>
   );
 }
 ```
 
-### 6. Работа с конфигурацией
+### 5. Работа с конфигурацией
 
 ```tsx
 import { siteConfig } from '../constants/siteConfig';
@@ -177,6 +169,7 @@ import { siteConfig } from '../constants/siteConfig';
 ## Стилевые паттерны
 
 ### Типичная секция страницы
+
 ```tsx
 <section className="py-24 bg-neutral-50">
   <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
@@ -186,27 +179,39 @@ import { siteConfig } from '../constants/siteConfig';
 ```
 
 ### Hero секция
+
 ```tsx
 <PageHero
   category="Категория"
   categoryColor="red"
-  title={<>ГЛАВНЫЙ <br/>ЗАГОЛОВОК</>}
+  title={
+    <>
+      ГЛАВНЫЙ <br />
+      ЗАГОЛОВОК
+    </>
+  }
   subtitle="Подзаголовок секции"
   borderColor="yellow"
 />
 ```
 
 ### Заголовок секции
+
 ```tsx
 <SectionHeader
   label="Метка"
   labelColor="red"
-  title={<>ЗАГОЛОВОК <span className="text-[#E31837]">С АКЦЕНТОМ</span></>}
+  title={
+    <>
+      ЗАГОЛОВОК <span className="text-[#E31837]">С АКЦЕНТОМ</span>
+    </>
+  }
   subtitle="Описание секции"
 />
 ```
 
 ### Кнопки
+
 ```tsx
 // Основная кнопка
 <Button variant="primary" size="md" href="/about">
@@ -225,6 +230,7 @@ import { siteConfig } from '../constants/siteConfig';
 ```
 
 ### Карточки
+
 ```tsx
 <Card variant="bordered" hover>
   <div className="p-6">
@@ -237,17 +243,19 @@ import { siteConfig } from '../constants/siteConfig';
 ## Адаптивный дизайн
 
 ### Breakpoints
+
 ```tsx
 // Mobile-first подход
-className="text-base md:text-lg lg:text-xl"
-className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-className="hidden lg:block"  // Показать только на desktop
-className="lg:hidden"         // Скрыть на desktop
+className = "text-base md:text-lg lg:text-xl";
+className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
+className = "hidden lg:block"; // Показать только на desktop
+className = "lg:hidden"; // Скрыть на desktop
 ```
 
 ### Tailwind breakpoints
+
 - `sm:` - 640px и выше
-- `md:` - 768px и выше  
+- `md:` - 768px и выше
 - `lg:` - 1024px и выше
 - `xl:` - 1280px и выше
 - `2xl:` - 1440px и выше
@@ -255,43 +263,46 @@ className="lg:hidden"         // Скрыть на desktop
 ## Типичные компоненты
 
 ### Статистика
+
 ```tsx
-<StatCard 
-  value="500+" 
-  label="СПОРТСМЕНОВ"
-  accentColor="red"
-/>
+<StatCard value="500+" label="СПОРТСМЕНОВ" accentColor="red" />
 ```
 
 ### Национальная полоса
+
 ```tsx
 <NationalColorBar height="h-2" />
 ```
 
 ### Loader
+
 ```tsx
-{isLoading && <Loader size="md" />}
+{
+  isLoading && <Loader size="md" />;
+}
 ```
 
 ## Работа с данными
 
 ### Mock данные
+
 ```tsx
-import { sportsData, newsData, athletesData } from '../data/mockData';
+import { sportsData, newsData, athletesData } from "../data/mockData";
 
 // Использование
-{sportsData.map(sport => (
-  <SportCard key={sport.name} {...sport} />
-))}
+{
+  sportsData.map((sport) => <SportCard key={sport.name} {...sport} />);
+}
 ```
 
 ### TypeScript типы
+
 ```tsx
-import { Sport, NewsItem, Athlete } from '../types';
+import { Sport, NewsItem, Athlete } from "../types";
 
 const mySport: Sport = {
-  name: 'БОРЬБА',
-  type: 'ЕДИНОБОРСТВА',
+  name: "БОРЬБА",
+  type: "ЕДИНОБОРСТВА",
   // ...
 };
 ```
@@ -299,49 +310,59 @@ const mySport: Sport = {
 ## Утилиты
 
 ### Объединение классов
-```tsx
-import { cn } from '../utils/cn';
 
-<div className={cn(
-  "base-class",
-  isActive && "active-class",
-  variant === "primary" ? "primary" : "secondary"
-)} />
+```tsx
+import { cn } from "../utils/cn";
+
+<div
+  className={cn(
+    "base-class",
+    isActive && "active-class",
+    variant === "primary" ? "primary" : "secondary",
+  )}
+/>;
 ```
 
 ### Форматирование дат
-```tsx
-import { formatDate } from '../utils/formatDate';
 
-<p>{formatDate("2026-03-16")}</p>  // "16 марта 2026"
+```tsx
+import { formatDate } from "../utils/formatDate";
+
+<p>{formatDate("2026-03-16")}</p>; // "16 марта 2026"
 ```
 
 ## Отладка
 
 ### React DevTools
+
 Установить расширение для Chrome/Firefox
 
 ### Vite Hot Reload
+
 Изменения автоматически отражаются в браузере
 
 ### Console.log
+
 ```tsx
-console.log('Debug:', values);
+console.log("Debug:", values);
 ```
 
 ## Частые проблемы
 
 ### 1. Изображение не загружается
+
 - Проверьте URL
 - Используйте `ImageWithFallback`
 - Проверьте CORS
 
 ### 2. Стили не применяются
+
 - Проверьте синтаксис Tailwind
 - Убедитесь, что класс не переопределен
 - Используйте `cn()` для условных классов
 
 ### 3. TypeScript ошибки
+
 - Проверьте типы props
 - Импортируйте типы из `/types/`
 - Используйте `as const` для констант

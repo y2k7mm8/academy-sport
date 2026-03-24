@@ -1,5 +1,4 @@
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
-import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { useLanguage } from "../contexts/LanguageContext";
 
 const pageTranslations = {
@@ -8,7 +7,7 @@ const pageTranslations = {
       tag: "Связь с нами",
       title1: "КОНТАКТНАЯ",
       title2: "ИНФОРМАЦИЯ",
-      desc: "Для обращений граждан, прессы и потенциальных партнеров."
+      desc: "Для обращений граждан, прессы и потенциальных партнеров.",
     },
     info: {
       tag: "Координаты",
@@ -21,7 +20,7 @@ const pageTranslations = {
       emailPress: "press@cpmsk.kg (Для СМИ)",
       hoursTag: "Режим работы канцелярии",
       hoursTime: "ПН - ПТ: 09:00 - 18:00",
-      hoursLunch: "Обед: 12:30 - 13:30"
+      hoursLunch: "Обед: 12:30 - 13:30",
     },
     form: {
       title: "Электронное обращение",
@@ -35,20 +34,20 @@ const pageTranslations = {
         "Вопросы сотрудничества",
         "Запрос для СМИ",
         "Жалоба / Предложение",
-        "Другое"
+        "Другое",
       ],
       message: "Сообщение *",
       messagePlaceholder: "Текст вашего сообщения...",
-      submit: "Отправить"
+      submit: "Отправить",
     },
-    mapPlaceholder: "[ Интерактивная карта ]"
+    mapPlaceholder: "[ Интерактивная карта ]",
   },
   ky: {
     hero: {
       tag: "Биз менен байланыш",
       title1: "БАЙЛАНЫШ",
       title2: "МААЛЫМАТЫ",
-      desc: "Жарандардын, басма сөздүн жана потенциалдуу өнөктөштөрдүн кайрылуулары үчүн."
+      desc: "Жарандардын, басма сөздүн жана потенциалдуу өнөктөштөрдүн кайрылуулары үчүн.",
     },
     info: {
       tag: "Координаттар",
@@ -61,7 +60,7 @@ const pageTranslations = {
       emailPress: "press@cpmsk.kg (ЖМК үчүн)",
       hoursTag: "Кеңсенин иштөө режими",
       hoursTime: "ДҮЙ - ЖУМ: 09:00 - 18:00",
-      hoursLunch: "Түшкү тамак: 12:30 - 13:30"
+      hoursLunch: "Түшкү тамак: 12:30 - 13:30",
     },
     form: {
       title: "Электрондук кайрылуу",
@@ -75,14 +74,14 @@ const pageTranslations = {
         "Кызматташуу маселелери",
         "ЖМК үчүн сурам",
         "Арыз / Сунуш",
-        "Башка"
+        "Башка",
       ],
       message: "Билдирүү *",
       messagePlaceholder: "Сиздин билдирүүңүздүн тексти...",
-      submit: "Жөнөтүү"
+      submit: "Жөнөтүү",
     },
-    mapPlaceholder: "[ Интерактивдүү карта ]"
-  }
+    mapPlaceholder: "[ Интерактивдүү карта ]",
+  },
 };
 
 export function Contact() {
@@ -96,10 +95,13 @@ export function Contact() {
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
           <div className="flex items-center gap-4 mb-6">
             <span className="w-8 h-[2px] bg-[#E31837]"></span>
-            <span className="text-[#E31837] font-bold tracking-[0.2em] text-sm uppercase">{t.hero.tag}</span>
+            <span className="text-[#E31837] font-bold tracking-[0.2em] text-sm uppercase">
+              {t.hero.tag}
+            </span>
           </div>
           <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter text-white mb-6">
-            {t.hero.title1} <br/><span className="text-neutral-500">{t.hero.title2}</span>
+            {t.hero.title1} <br />
+            <span className="text-neutral-500">{t.hero.title2}</span>
           </h1>
           <p className="text-xl text-neutral-400 max-w-2xl font-medium border-l-4 border-[#FFCD00] pl-6">
             {t.hero.desc}
@@ -110,24 +112,27 @@ export function Contact() {
       <section className="py-24">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-32">
-            
             {/* Info Side */}
             <div>
               <h2 className="text-sm font-bold uppercase tracking-widest text-[#E31837] mb-12 flex items-center gap-4">
                 <span className="w-4 h-4 bg-[#E31837]"></span>
                 {t.info.tag}
               </h2>
-              
+
               <div className="space-y-12">
                 <div className="flex gap-6 items-start group">
                   <div className="w-12 h-12 bg-neutral-100 flex items-center justify-center shrink-0 group-hover:bg-[#E31837] transition-colors">
                     <MapPin className="w-5 h-5 text-neutral-900 group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-2">{t.info.addressTag}</h3>
+                    <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-2">
+                      {t.info.addressTag}
+                    </h3>
                     <p className="text-xl font-black uppercase tracking-tight text-neutral-900 leading-tight">
-                      {t.info.address1}<br/>
-                      {t.info.address2}<br/>
+                      {t.info.address1}
+                      <br />
+                      {t.info.address2}
+                      <br />
                       {t.info.address3}
                     </p>
                   </div>
@@ -138,7 +143,9 @@ export function Contact() {
                     <Phone className="w-5 h-5 text-neutral-900 group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-2">{t.info.phoneTag}</h3>
+                    <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-2">
+                      {t.info.phoneTag}
+                    </h3>
                     <p className="text-xl font-black font-mono tracking-wider text-neutral-900">
                       +996 (312) 55-55-55
                     </p>
@@ -153,7 +160,9 @@ export function Contact() {
                     <Mail className="w-5 h-5 text-neutral-900 group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-2">{t.info.emailTag}</h3>
+                    <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-2">
+                      {t.info.emailTag}
+                    </h3>
                     <p className="text-xl font-black tracking-wider text-neutral-900">
                       info@cpmsk.kg
                     </p>
@@ -168,7 +177,9 @@ export function Contact() {
                     <Clock className="w-5 h-5 text-neutral-900 group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-2">{t.info.hoursTag}</h3>
+                    <h3 className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-2">
+                      {t.info.hoursTag}
+                    </h3>
                     <p className="text-lg font-black uppercase tracking-tight text-neutral-900">
                       {t.info.hoursTime}
                     </p>
@@ -183,7 +194,7 @@ export function Contact() {
             {/* Form Side */}
             <div className="bg-neutral-50 p-8 lg:p-12 border border-neutral-200 relative">
               <div className="absolute top-0 left-0 w-full h-1 bg-[#E31837]"></div>
-              
+
               <h2 className="text-3xl font-black uppercase tracking-tighter text-neutral-900 mb-2">
                 {t.form.title}
               </h2>
@@ -227,10 +238,18 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-[10px] font-bold uppercase tracking-widest text-neutral-500 mb-2">
+                  <label
+                    htmlFor="topic"
+                    className="block text-[10px] font-bold uppercase tracking-widest text-neutral-500 mb-2"
+                  >
                     {t.form.topic}
                   </label>
-                  <select className="w-full bg-white border border-neutral-300 px-4 py-3 text-sm font-medium focus:outline-none focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 transition-shadow appearance-none">
+                  <select
+                    id="topic"
+                    name="topic"
+                    aria-label={t.form.topic}
+                    className="w-full bg-white border border-neutral-300 px-4 py-3 text-sm font-medium focus:outline-none focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 transition-shadow appearance-none"
+                  >
                     {t.form.topicOptions.map((opt, i) => (
                       <option key={i}>{opt}</option>
                     ))}
@@ -257,7 +276,6 @@ export function Contact() {
                 </button>
               </form>
             </div>
-            
           </div>
         </div>
       </section>

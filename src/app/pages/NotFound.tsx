@@ -6,11 +6,11 @@ export function NotFound() {
   const { t } = useLanguage();
 
   const popularLinks = [
-    { label: t('nav.about'), path: "/about" },
-    { label: t('nav.sports'), path: "/sports" },
-    { label: t('nav.achievements'), path: "/achievements" },
-    { label: t('nav.news'), path: "/news" },
-    { label: t('nav.contact'), path: "/contact" },
+    { label: t("nav.about"), path: "/about" },
+    { label: t("nav.sports"), path: "/sports" },
+    { label: t("nav.achievements"), path: "/achievements" },
+    { label: t("nav.news"), path: "/news" },
+    { label: t("nav.contact"), path: "/contact" },
   ];
 
   return (
@@ -33,11 +33,11 @@ export function NotFound() {
 
         {/* Message */}
         <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white mb-6">
-          {t('notFound.title')}
+          {t("notFound.title")}
         </h1>
-        
+
         <p className="text-xl text-neutral-400 mb-12 max-w-xl mx-auto font-medium">
-          {t('notFound.description')}
+          {t("notFound.description")}
         </p>
 
         {/* Actions */}
@@ -47,22 +47,22 @@ export function NotFound() {
             className="group bg-white text-neutral-950 px-10 py-5 font-bold uppercase tracking-widest text-sm hover:bg-[#E31837] hover:text-white transition-all duration-300 flex items-center gap-4"
           >
             <Home className="w-5 h-5" />
-            {t('notFound.backHome')}
+            {t("notFound.backHome")}
           </Link>
-          
+
           <button
             onClick={() => window.history.back()}
             className="group border border-white/30 text-white px-10 py-5 font-bold uppercase tracking-widest text-sm hover:border-white hover:bg-white/10 transition-all duration-300 flex items-center gap-4"
           >
             <ArrowLeft className="w-5 h-5" />
-            {t('nav.home')}
+            {t("nav.home")}
           </button>
         </div>
 
         {/* Additional Links */}
         <div className="mt-16 pt-16 border-t border-neutral-800">
           <p className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-6">
-            {t('footer.quickLinks')}
+            {t("footer.quickLinks")}
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             {popularLinks.map((link, i) => (

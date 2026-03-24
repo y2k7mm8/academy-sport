@@ -196,7 +196,7 @@
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #E31837;
+    background: #e31837;
   }
 
   /* Hide scrollbar for elements with .no-scrollbar class */
@@ -206,6 +206,16 @@
 
   .no-scrollbar {
     -ms-overflow-style: none;
-    scrollbar-width: none;
   }
+}
+
+/* Text stroke utilities used in components (moved from inline styles) */
+.stroke-white {
+  -webkit-text-stroke: 2px white;
+  color: transparent;
+}
+
+.stroke-white-sm {
+  -webkit-text-stroke: 1px white;
+  color: transparent;
 }

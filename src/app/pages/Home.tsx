@@ -1,49 +1,74 @@
 import { Link } from "react-router";
-import { ArrowRight, Trophy, Users, Target, Activity, Calendar } from "lucide-react";
-import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import {
+  ArrowRight,
+  Trophy,
+  Users,
+  Target,
+  Activity,
+  Calendar,
+} from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
+import ImageWithFallback from "../components/ImageWithFallback";
 
 export function Home() {
   const { t, language } = useLanguage();
 
   const stats = [
-    { value: t('home.stats.athletes'), label: t('home.stats.athletesLabel').toUpperCase() },
-    { value: t('home.stats.medals'), label: t('home.stats.medalsLabel').toUpperCase() },
-    { value: t('home.stats.sports'), label: t('home.stats.sportsLabel').toUpperCase() },
-    { value: t('home.stats.facilities'), label: t('home.stats.facilitiesLabel').toUpperCase() },
+    {
+      value: t("home.stats.athletes"),
+      label: t("home.stats.athletesLabel").toUpperCase(),
+    },
+    {
+      value: t("home.stats.medals"),
+      label: t("home.stats.medalsLabel").toUpperCase(),
+    },
+    {
+      value: t("home.stats.sports"),
+      label: t("home.stats.sportsLabel").toUpperCase(),
+    },
+    {
+      value: t("home.stats.facilities"),
+      label: t("home.stats.facilitiesLabel").toUpperCase(),
+    },
   ];
 
   const sports = [
     {
-      name: language === 'ru' ? "БОРЬБА" : "КҮРӨШ",
-      image: "https://images.unsplash.com/photo-1576149146095-caa19d4de102?q=80&w=1080&auto=format&fit=crop",
-      tag: language === 'ru' ? "ЕДИНОБОРСТВА" : "КҮРӨШ СПОРТТОРУ"
+      name: language === "ru" ? "БОРЬБА" : "КҮРӨШ",
+      image:
+        "https://images.unsplash.com/photo-1576149146095-caa19d4de102?q=80&w=1080&auto=format&fit=crop",
+      tag: language === "ru" ? "ЕДИНОБОРСТВА" : "КҮРӨШ СПОРТТОРУ",
     },
     {
-      name: language === 'ru' ? "ЛЕГКАЯ АТЛЕТИКА" : "ЖЕҢИЛ АТЛЕТИКА",
-      image: "https://images.unsplash.com/photo-1765261473063-ec862e10ba58?q=80&w=1080&auto=format&fit=crop",
-      tag: language === 'ru' ? "ЦИКЛИЧЕСКИЕ ВИДЫ" : "ЦИКЛДИК ТҮРЛӨР"
+      name: language === "ru" ? "ЛЕГКАЯ АТЛЕТИКА" : "ЖЕҢИЛ АТЛЕТИКА",
+      image:
+        "https://images.unsplash.com/photo-1765261473063-ec862e10ba58?q=80&w=1080&auto=format&fit=crop",
+      tag: language === "ru" ? "ЦИКЛИЧЕСКИЕ ВИДЫ" : "ЦИКЛДИК ТҮРЛӨР",
     },
     {
-      name: language === 'ru' ? "ФУТБОЛ" : "ФУТБОЛ",
-      image: "https://images.unsplash.com/photo-1603351820248-eb5d68f64be0?q=80&w=1080&auto=format&fit=crop",
-      tag: language === 'ru' ? "КОМАНДНЫЕ ВИДЫ" : "КОМАНДАЛЫК ТҮРЛӨР"
+      name: language === "ru" ? "ФУТБОЛ" : "ФУТБОЛ",
+      image:
+        "https://images.unsplash.com/photo-1603351820248-eb5d68f64be0?q=80&w=1080&auto=format&fit=crop",
+      tag: language === "ru" ? "КОМАНДНЫЕ ВИДЫ" : "КОМАНДАЛЫК ТҮРЛӨР",
     },
     {
-      name: language === 'ru' ? "БАСКЕТБОЛ" : "БАСКЕТБОЛ",
-      image: "https://images.unsplash.com/photo-1721339041100-ec39e6600362?q=80&w=1080&auto=format&fit=crop",
-      tag: language === 'ru' ? "КОМАНДНЫЕ ВИДЫ" : "КОМАНДАЛЫК ТҮРЛӨР"
+      name: language === "ru" ? "БАСКЕТБОЛ" : "БАСКЕТБОЛ",
+      image:
+        "https://images.unsplash.com/photo-1721339041100-ec39e6600362?q=80&w=1080&auto=format&fit=crop",
+      tag: language === "ru" ? "КОМАНДНЫЕ ВИДЫ" : "КОМАНДАЛЫК ТҮРЛӨР",
     },
     {
-      name: language === 'ru' ? "ТЯЖЕЛАЯ АТЛЕТИКА" : "АУЫР АТЛЕТИКА",
-      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1080&auto=format&fit=crop",
-      tag: language === 'ru' ? "СИЛОВЫЕ ВИДЫ" : "КҮЧ ТҮРЛӨРҮ"
+      name: language === "ru" ? "ТЯЖЕЛАЯ АТЛЕТИКА" : "АУЫР АТЛЕТИКА",
+      image:
+        "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1080&auto=format&fit=crop",
+      tag: language === "ru" ? "СИЛОВЫЕ ВИДЫ" : "КҮЧ ТҮРЛӨРҮ",
     },
     {
-      name: language === 'ru' ? "ПЛАВАНИЕ" : "СҮЗҮҮ",
-      image: "https://images.unsplash.com/photo-1560085429-07b1d6f46a2a?q=80&w=1080&auto=format&fit=crop",
-      tag: language === 'ru' ? "ВОДНЫЕ ВИДЫ" : "СУУ ТҮРЛӨРҮ"
-    }
+      name: language === "ru" ? "ПЛАВАНИЕ" : "СҮЗҮҮ",
+      image:
+        "https://images.unsplash.com/photo-1560085429-07b1d6f46a2a?q=80&w=1080&auto=format&fit=crop",
+      tag: language === "ru" ? "ВОДНЫЕ ВИДЫ" : "СУУ ТҮРЛӨРҮ",
+    },
   ];
 
   return (
@@ -53,45 +78,56 @@ export function Home() {
         <div className="absolute inset-0">
           <ImageWithFallback
             src="https://images.unsplash.com/photo-1729048229977-fa74f7a330af?q=80&w=1920&auto=format&fit=crop"
-            alt={language === 'ru' ? "Спортсмены на стадионе" : "Стадиондогу спортчулар"}
+            alt={
+              language === "ru"
+                ? "Спортсмены на стадионе"
+                : "Стадиондогу спортчулар"
+            }
             className="w-full h-full object-cover opacity-40 mix-blend-luminosity grayscale"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-900/60 to-transparent"></div>
         </div>
-        
+
         <div className="relative max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 w-full">
           <div className="flex items-center gap-4 mb-8">
             <span className="w-12 h-[2px] bg-[#FFCD00]"></span>
             <span className="text-[#FFCD00] font-bold tracking-[0.2em] text-sm md:text-base uppercase">
-              {language === 'ru' ? 'Официальный сайт' : 'Расмий сайт'}
+              {language === "ru" ? "Официальный сайт" : "Расмий сайт"}
             </span>
           </div>
-          
+
           <h1 className="text-white font-black uppercase leading-[0.85] tracking-tighter mb-6 break-words max-w-5xl">
-            {language === 'ru' ? (
+            {language === "ru" ? (
               <>
-                <span className="block text-5xl sm:text-7xl lg:text-[7rem]">ЦЕНТР ПОДГОТОВКИ</span>
-                <span className="block text-4xl sm:text-6xl lg:text-[6rem] text-transparent stroke-text" style={{ WebkitTextStroke: "2px white", color: "transparent" }}>
+                <span className="block text-5xl sm:text-7xl lg:text-[7rem]">
+                  ЦЕНТР ПОДГОТОВКИ
+                </span>
+                <span className="block text-4xl sm:text-6xl lg:text-[6rem] text-transparent stroke-text stroke-white">
                   МОЛОДЕЖНЫХ
                 </span>
-                <span className="block text-5xl sm:text-7xl lg:text-[7rem] text-[#E31837]">СБОРНЫХ КОМАНД</span>
+                <span className="block text-5xl sm:text-7xl lg:text-[7rem] text-[#E31837]">
+                  СБОРНЫХ КОМАНД
+                </span>
               </>
             ) : (
               <>
-                <span className="block text-5xl sm:text-7xl lg:text-[7rem]">ЖАШТАР КУРАМА</span>
-                <span className="block text-4xl sm:text-6xl lg:text-[6rem] text-transparent stroke-text" style={{ WebkitTextStroke: "2px white", color: "transparent" }}>
+                <span className="block text-5xl sm:text-7xl lg:text-[7rem]">
+                  ЖАШТАР КУРАМА
+                </span>
+                <span className="block text-4xl sm:text-6xl lg:text-[6rem] text-transparent stroke-text stroke-white">
                   КОМАНДАЛАРЫН
                 </span>
-                <span className="block text-5xl sm:text-7xl lg:text-[7rem] text-[#E31837]">ДАЯРДОО БОРБОРУ</span>
+                <span className="block text-5xl sm:text-7xl lg:text-[7rem] text-[#E31837]">
+                  ДАЯРДОО БОРБОРУ
+                </span>
               </>
             )}
           </h1>
-          
+
           <p className="text-neutral-300 max-w-2xl text-lg md:text-xl font-medium leading-relaxed mb-10 border-l-4 border-[#E31837] pl-6">
-            {language === 'ru' 
-              ? 'Государственное учреждение по развитию спорта высших достижений и подготовке резерва для национальных сборных Кыргызской Республики.'
-              : 'Кыргыз Республикасынын улуттук курама командалары үчүн жогорку жетишкендиктер спортун өнүктүрүү жана камдык даярдоо боюнча мамлекеттик мекеме.'
-            }
+            {language === "ru"
+              ? "Государственное учреждение по развитию спорта высших достижений и подготовке резерва для национальных сборных Кыргызской Республики."
+              : "Кыргыз Республикасынын улуттук курама командалары үчүн жогорку жетишкендиктер спортун өнүктүрүү жана камдык даярдоо боюнча мамлекеттик мекеме."}
           </p>
 
           <div className="flex flex-wrap gap-6">
@@ -99,14 +135,14 @@ export function Home() {
               to="/about"
               className="group bg-white text-neutral-950 px-8 py-5 font-bold uppercase tracking-widest text-sm hover:bg-[#E31837] hover:text-white transition-all duration-300 flex items-center gap-4"
             >
-              {t('common.learnMore')}
+              {t("common.learnMore")}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               to="/sports"
               className="group border border-white/30 text-white px-8 py-5 font-bold uppercase tracking-widest text-sm hover:border-white hover:bg-white/10 transition-all duration-300"
             >
-              {t('nav.sports')}
+              {t("nav.sports")}
             </Link>
           </div>
         </div>
@@ -136,24 +172,29 @@ export function Home() {
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
               <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] text-neutral-900 mb-8">
-                ВОСПИТЫВАЕМ <br/>
-                <span className="text-[#E31837]">ЧЕМПИОНОВ</span> <br/>
+                ВОСПИТЫВАЕМ <br />
+                <span className="text-[#E31837]">ЧЕМПИОНОВ</span> <br />
                 БУДУЩЕГО
               </h2>
               <p className="text-lg text-neutral-600 mb-8 leading-relaxed font-medium">
-                Мы создаем идеальные условия для выявления, отбора и подготовки талантливых 
-                молодых спортсменов. Наша цель — вывести юношеский и молодежный спорт 
-                Кыргызстана на мировой уровень.
+                Мы создаем идеальные условия для выявления, отбора и подготовки
+                талантливых молодых спортсменов. Наша цель — вывести юношеский и
+                молодежный спорт Кыргызстана на мировой уровень.
               </p>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
                 <div className="flex gap-4">
                   <div className="mt-1">
                     <Target className="w-6 h-6 text-[#E31837] stroke-[1.5]" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-neutral-900 uppercase tracking-wider mb-2 text-sm">Фокус на результат</h4>
-                    <p className="text-neutral-500 text-sm leading-relaxed">Системный подход к тренировкам по международным стандартам.</p>
+                    <h4 className="font-bold text-neutral-900 uppercase tracking-wider mb-2 text-sm">
+                      Фокус на результат
+                    </h4>
+                    <p className="text-neutral-500 text-sm leading-relaxed">
+                      Системный подход к тренировкам по международным
+                      стандартам.
+                    </p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -161,8 +202,12 @@ export function Home() {
                     <Activity className="w-6 h-6 text-[#E31837] stroke-[1.5]" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-neutral-900 uppercase tracking-wider mb-2 text-sm">Спорт медицина</h4>
-                    <p className="text-neutral-500 text-sm leading-relaxed">Полный контроль физического состояния и восстановления.</p>
+                    <h4 className="font-bold text-neutral-900 uppercase tracking-wider mb-2 text-sm">
+                      Спорт медицина
+                    </h4>
+                    <p className="text-neutral-500 text-sm leading-relaxed">
+                      Полный контроль физического состояния и восстановления.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -175,7 +220,7 @@ export function Home() {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
               </Link>
             </div>
-            
+
             <div className="relative h-[600px]">
               <div className="absolute top-0 right-0 w-3/4 h-full bg-[#E31837]/5 translate-x-8 -translate-y-8 z-0"></div>
               <ImageWithFallback
@@ -185,7 +230,9 @@ export function Home() {
               />
               <div className="absolute -bottom-8 -left-8 bg-[#E31837] text-white p-8 z-20 max-w-[280px]">
                 <div className="text-4xl font-black mb-2">20+</div>
-                <div className="text-sm font-bold uppercase tracking-widest">Лет успешной работы в спорте высших достижений</div>
+                <div className="text-sm font-bold uppercase tracking-widest">
+                  Лет успешной работы в спорте высших достижений
+                </div>
               </div>
             </div>
           </div>
@@ -199,10 +246,13 @@ export function Home() {
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <span className="w-8 h-[2px] bg-[#E31837]"></span>
-                <span className="text-[#E31837] font-bold tracking-[0.2em] text-sm uppercase">Дисциплины</span>
+                <span className="text-[#E31837] font-bold tracking-[0.2em] text-sm uppercase">
+                  Дисциплины
+                </span>
               </div>
               <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white">
-                НАПРАВЛЕНИЯ <br/><span className="text-neutral-600">ПОДГОТОВКИ</span>
+                НАПРАВЛЕНИЯ <br />
+                <span className="text-neutral-600">ПОДГОТОВКИ</span>
               </h2>
             </div>
             <Link
@@ -228,7 +278,7 @@ export function Home() {
                 className="w-full h-full object-cover opacity-60 mix-blend-luminosity group-hover:scale-105 group-hover:opacity-100 group-hover:mix-blend-normal transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent opacity-90"></div>
-              
+
               <div className="absolute inset-0 p-10 flex flex-col justify-end transform transition-transform duration-500 group-hover:-translate-y-2">
                 <div className="text-[#FFCD00] text-xs font-bold uppercase tracking-widest mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                   {sport.tag}
@@ -247,13 +297,14 @@ export function Home() {
         {/* Abstract shapes in background */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-red-600 rounded-full blur-[100px] opacity-50 translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-red-800 rounded-full blur-[80px] opacity-50 -translate-x-1/2 translate-y-1/2"></div>
-        
+
         <div className="relative max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <h2 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-8 max-w-4xl mx-auto leading-[0.9]">
-            ПРОЛОЖИ СВОЙ ПУТЬ <br/> НА ОЛИМПИЙСКИЕ ИГРЫ
+            ПРОЛОЖИ СВОЙ ПУТЬ <br /> НА ОЛИМПИЙСКИЕ ИГРЫ
           </h2>
           <p className="text-xl text-red-100 mb-12 max-w-2xl mx-auto font-medium">
-            Центр проводит регулярные отборы талантливых спортсменов во всех регионах страны.
+            Центр проводит регулярные отборы талантливых спортсменов во всех
+            регионах страны.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Link

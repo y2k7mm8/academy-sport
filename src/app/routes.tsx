@@ -36,13 +36,11 @@ export const router = createBrowserRouter([
     children: [
       { index: true, Component: AdminDashboard },
       { path: "athletes", Component: AdminAthletesTable },
-    ]
+    ],
   },
   {
     path: "/profile",
     Component: DashboardLayout,
-    children: [
-      { index: true, Component: UserProfile },
-    ]
-  }
+    children: [{ index: true, Component: UserProfile }],
+  },
 ]);

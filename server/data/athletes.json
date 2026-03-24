@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Айсулуу Тыныбекова111",
+    "sport": "Вольная борьба",
+    "image": "https://cdn-0.aki.kg/cdn-st-0/qdW/M/2145830.ad4556d23e622a3c0f99eba32eafa5e3.jpg",
+    "coverImage": "https://images.unsplash.com/photo-1771909713995-d793a0c93660?q=80&w=1920&auto=format&fit=crop",
+    "birthDate": "4 мая 1992",
+    "region": "Майлуу-Суу, Джалал-Абадская область",
+    "height": "170 см",
+    "weight": "62 кг",
+    "bio": "Одна из ведущих спортсменок Кыргызстана в вольной борьбе. Обладательница многочисленных медалей на международных соревнованиях, известна своим техничным стилем и устойчивостью в решающие моменты поединков.",
+    "achievements": [
+      {
+        "year": 2020,
+        "event": "Олимпийские игры, Токио",
+        "result": "Серебро",
+        "type": "silver"
+      },
+      {
+        "year": 2023,
+        "event": "Чемпионат мира, Белград",
+        "result": "Золото",
+        "type": "gold"
+      },
+      {
+        "year": 2021,
+        "event": "Чемпионат мира, Осло",
+        "result": "Золото",
+        "type": "gold"
+      }
+    ],
+    "stats": {
+      "matches": 142,
+      "wins": 118,
+      "winRate": "83%",
+      "worldRank": 1
+    }
+  },
+  {
+    "id": 2,
+    "name": "Акжол Махмудов",
+    "sport": "Греко-римская борьба",
+    "image": "https://cdn-0.aki.kg/cdn-st-0/qf2/7/2774006.2554b20a9ec30488d12cbab0ec50e8e2.jpg",
+    "coverImage": "https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?q=80&w=1920&auto=format&fit=crop",
+    "birthDate": "12 сентября 1998",
+    "region": "Ошская область",
+    "height": "178 см",
+    "weight": "77 кг",
+    "bio": "Перспективный борец греко-римского стиля, отличающийся силовой подготовкой и грамотной тактикой. Активно участвует в международных турнирах, стабильно попадает в призовые места континентальных стартов.",
+    "achievements": [
+      {
+        "year": 2023,
+        "event": "Молодежный чемпионат Азии",
+        "result": "Золото",
+        "type": "gold"
+      },
+      {
+        "year": 2022,
+        "event": "Этап Кубка мира",
+        "result": "Бронза",
+        "type": "bronze"
+      }
+    ],
+    "stats": {
+      "matches": 88,
+      "wins": 62,
+      "winRate": "70%",
+      "worldRank": 18
+    }
+  },
+  {
+    "name": "aaa",
+    "sport": "",
+    "region": "",
+    "status": "Active",
+    "id": 3
+  },
+  {
+    "name": "sdsdwes",
+    "sport": "spowrt",
+    "region": "",
+    "status": "Active",
+    "id": 4
+  }
+]

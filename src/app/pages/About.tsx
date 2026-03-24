@@ -1,6 +1,6 @@
 import { Target, Users, Award, TrendingUp } from "lucide-react";
-import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { useLanguage } from "../contexts/LanguageContext";
+import ImageWithFallback from "../components/ImageWithFallback";
 
 const pageTranslations = {
   ru: {
@@ -291,7 +291,7 @@ export function About() {
                   {value.title}
                 </h3>
                 <p className="text-neutral-600 text-sm leading-relaxed">
-                  {value.description}
+                  {value.desc}
                 </p>
                 {/* Decorative border */}
                 <div className="absolute top-0 left-0 w-full h-[1px] bg-neutral-200 -mt-8"></div>
